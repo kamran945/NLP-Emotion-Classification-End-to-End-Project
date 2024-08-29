@@ -6,7 +6,7 @@ import logging
 PROJECT_REPO = "emotionClassification"
 
 file_list = [
-    ".github/.workflows/.gitkeep",
+    ".github/workflows/.gitkeep",
     f"src/{PROJECT_REPO}/__init__.py",
     f"src/{PROJECT_REPO}/config/__init__.py",
     f"src/{PROJECT_REPO}/config/configuration.py",
