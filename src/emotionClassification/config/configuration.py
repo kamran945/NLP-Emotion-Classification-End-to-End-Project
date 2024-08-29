@@ -2,7 +2,10 @@ from pathlib import Path
 
 from src.emotionClassification.constants import *
 from src.emotionClassification.utils.common import read_yaml_file, create_directories
-from src.emotionClassification.entity import DataIngestionConfig
+from src.emotionClassification.entity import (
+    DataIngestionConfig,
+    DataValidationConfig,
+)
 
 
 class ConfigurationManager:
@@ -37,4 +40,19 @@ class ConfigurationManager:
             source_url=config.source_url,
             local_data_file=config.local_data_file,
             extract_dir=config.extract_dir,
+        )
+
+    def get_data_validation_config(self) -> DataValidationConfig:
+        """
+        Return the DataValidationConfig object initialized with the configuration parameters.
+        """
+        config = self.config.data_validation
+
+        create_directories([config.root_dir])
+
+        return DataValidationConfig(
+            root_dir=config.root_dir,
+            data_ingestion_dir=config.data_ingestion_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            REQUIRED_FILES=config.REQUIRED_FILES,
         )
