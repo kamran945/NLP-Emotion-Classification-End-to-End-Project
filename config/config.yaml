@@ -11,3 +11,8 @@ data_validation:
   data_ingestion_dir: artifacts/data_ingestion/sem_eval_2018_task_1
   STATUS_FILE: artifacts/data_validation/validation_status.txt
   REQUIRED_FILES: ["train", "validation", "test", "dataset_dict.json"]
+
+data_cleaning:
+  root_dir: artifacts/data_cleaning
+  data_ingestion_dir: artifacts/data_ingestion/sem_eval_2018_task_1
+  cleaned_dir: artifacts/data_cleaning/sem_eval_2018_task_1

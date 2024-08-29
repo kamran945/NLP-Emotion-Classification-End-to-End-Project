@@ -166,3 +166,6 @@ ec_venv/
 
 # do not include artifacts
 artifacts/
+
+# do not include logs
+logs/

@@ -16,3 +16,10 @@ class DataValidationConfig:
     data_ingestion_dir: Path
     STATUS_FILE: str
     REQUIRED_FILES: list
+
+
+@dataclass(frozen=True)
+class DataCleaningConfig:
+    root_dir: Path
+    data_ingestion_dir: Path
+    cleaned_dir: Path

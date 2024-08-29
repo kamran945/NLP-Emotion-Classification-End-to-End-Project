@@ -5,6 +5,7 @@ from src.emotionClassification.utils.common import read_yaml_file, create_direct
 from src.emotionClassification.entity import (
     DataIngestionConfig,
     DataValidationConfig,
+    DataCleaningConfig,
 )
 
 
@@ -55,4 +56,21 @@ class ConfigurationManager:
             data_ingestion_dir=config.data_ingestion_dir,
             STATUS_FILE=config.STATUS_FILE,
             REQUIRED_FILES=config.REQUIRED_FILES,
+        )
+
+    def get_data_cleaning_config_and_params(self) -> DataCleaningConfig:
+        """
+        Return the DataCleaningConfig object initialized with the configuration parameters.
+        """
+        config = self.config.data_cleaning
+
+        create_directories([config.root_dir, config.cleaned_dir])
+
+        return (
+            DataCleaningConfig(
+                root_dir=config.root_dir,
+                data_ingestion_dir=config.data_ingestion_dir,
+                cleaned_dir=config.cleaned_dir,
+            ),
+            self.params.data_cleaning,
         )
