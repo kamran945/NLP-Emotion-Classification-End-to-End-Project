@@ -1,6 +1,10 @@
 # NLP-Emotion-Classification-End-to-End-Project
 
-NLP-Emotion-Classification-End-to-End-Project
+This project focuses on building an end-to-end NLP pipeline for multi-label emotion classification using the "SemEval-2018 Task 1 dataset" , specifically designed for "Affect in Tweets." The goal is to classify tweets into multiple emotion categories such as anger, fear, joy, and sadness.
+
+## Citation
+
+@InProceedings{SemEval2018Task1, author = {Mohammad, Saif M. and Bravo-Marquez, Felipe and Salameh, Mohammad and Kiritchenko, Svetlana}, title = {SemEval-2018 {T}ask 1: {A}ffect in Tweets}, booktitle = {Proceedings of International Workshop on Semantic Evaluation (SemEval-2018)}, address = {New Orleans, LA, USA}, year = {2018}}
 
 ## Workflows
 
