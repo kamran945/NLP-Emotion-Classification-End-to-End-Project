@@ -6,6 +6,7 @@ from src.emotionClassification.entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataCleaningConfig,
+    DataTransformationConfig,
 )
 
 
@@ -73,4 +74,21 @@ class ConfigurationManager:
                 cleaned_dir=config.cleaned_dir,
             ),
             self.params.data_cleaning,
+        )
+
+    def get_data_transformation_config_and_params(self) -> DataTransformationConfig:
+        """
+        Return the DataTransormationConfig object initialized with the configuration parameters.
+        """
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir, config.transformation_dir])
+
+        return (
+            DataTransformationConfig(
+                root_dir=config.root_dir,
+                data_cleaned_dir=config.data_cleaned_dir,
+                transformation_dir=config.transformation_dir,
+            ),
+            self.params.model_params,
         )

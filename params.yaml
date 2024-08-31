@@ -1,2 +1,19 @@
 data_cleaning:
   batch_size: 32
+
+model_params:
+  model_checkpoint: distilbert-base-uncased
+  labels:
+    [
+      "anger",
+      "anticipation",
+      "disgust",
+      "fear",
+      "joy",
+      "love",
+      "optimism",
+      "pessimism",
+      "sadness",
+      "surprise",
+      "trust",
+    ]

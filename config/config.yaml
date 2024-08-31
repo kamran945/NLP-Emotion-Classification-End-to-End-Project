@@ -16,3 +16,8 @@ data_cleaning:
   root_dir: artifacts/data_cleaning
   data_ingestion_dir: artifacts/data_ingestion/sem_eval_2018_task_1
   cleaned_dir: artifacts/data_cleaning/sem_eval_2018_task_1
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_cleaned_dir: artifacts/data_cleaning/sem_eval_2018_task_1
+  transformation_dir: artifacts/data_transformation/sem_eval_2018_task_1

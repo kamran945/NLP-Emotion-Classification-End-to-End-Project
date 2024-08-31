@@ -8,6 +8,9 @@ from src.emotionClassification.pipeline.stage_02_data_validation import (
 from src.emotionClassification.pipeline.stage_03_data_cleaning import (
     DataCleaningPipeline,
 )
+from src.emotionClassification.pipeline.stage_04_data_transformation import (
+    DataTransformationPipeline,
+)
 
 STAGE_NAME = "Data Ingestion"
 
@@ -37,7 +40,19 @@ STAGE_NAME = "Data Cleaning/Preprocessing"
 try:
     logger.info(f">>>> Stage {STAGE_NAME} Started <<<<")
     data_cleaning = DataCleaningPipeline()
-    cleanined_data = data_cleaning.main()
+    cleaned_data = data_cleaning.main()
+    logger.info(f">>>> Stage {STAGE_NAME} Completed Successfully <<<<")
+except Exception as e:
+    logger.error(f">>>> Stage {STAGE_NAME} Failed <<<<")
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = "Data Transformation"
+
+try:
+    logger.info(f">>>> Stage {STAGE_NAME} Started <<<<")
+    data_transformtion = DataTransformationPipeline()
+    transformed_data = data_transformtion.main()
     logger.info(f">>>> Stage {STAGE_NAME} Completed Successfully <<<<")
 except Exception as e:
     logger.error(f">>>> Stage {STAGE_NAME} Failed <<<<")

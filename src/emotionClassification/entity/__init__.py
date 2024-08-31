@@ -23,3 +23,10 @@ class DataCleaningConfig:
     root_dir: Path
     data_ingestion_dir: Path
     cleaned_dir: Path
+
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_cleaned_dir: Path
+    transformation_dir: Path
